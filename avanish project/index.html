@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Animate.css CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+<!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <h1 onclick="showHome()">📰 Latest News</h1>
+                <ul class="nav-menu">
+                    <li><button onclick="showHome()">Home</button></li>
+                    <li><button onclick="showNewPostForm()">Write Article</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Home View -->
+        <div id="homeView" class="container">
+            <div class="hero-section">
+                <h1>Latest News & Articles</h1>
+                <p>Stay updated with the latest news and trending stories</p>
+                <button class="btn btn-primary" onclick="showNewPostForm()">Write New Article</button>
+            </div>
+
+            <div id="postsContainer" class="posts-grid">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+
+            <div id="noPostsMessage" class="no-posts hidden">
+                <h3>No articles yet</h3>
+                <p>Be the first to write an article!</p>
+                <button class="btn btn-primary" onclick="showNewPostForm()">Write First Article</button>
+            </div>
+        </div>
+
+        <!-- Single Post View -->
+        <div id="singlePostView" class="container hidden">
+            <article id="singlePostContent" class="single-post">
+                <!-- Single post content will be dynamically inserted here -->
+            </article>
+        </div>
+
+        <!-- New Post Form View -->
+        <div id="newPostView" class="container hidden">
+            <div class="form-container">
+                <h1>Write New Article</h1>
+                
+                <form id="newPostForm" class="post-form">
+                    <div class="form-group">
+                        <label for="title">Article Title</label>
+                        <input type="text" id="title" name="title" required placeholder="Enter article title...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="content">Article Content</label>
+                        <textarea id="content" name="content" required placeholder="Write your article content here..." rows="15"></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Publish Article</button>
+                        <button type="button" class="btn btn-secondary" onclick="showHome()">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Latest News Blog. Frontend-only version with separate files.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
